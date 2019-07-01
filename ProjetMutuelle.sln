@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetMutuelle", "ProjetMutuelle\ProjetMutuelle.csproj", "{4B6682B9-F929-4781-8755-5D1A9DD213D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblioMetierDLL", "BiblioMetierDLL\BiblioMetierDLL.csproj", "{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B6682B9-F929-4781-8755-5D1A9DD213D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B6682B9-F929-4781-8755-5D1A9DD213D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B6682B9-F929-4781-8755-5D1A9DD213D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B6682B9-F929-4781-8755-5D1A9DD213D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {15482883-AB1D-4A06-9EDD-04C80A81A503}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/heesesophia
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BiblioMetierDLL\\BiblioMetierDLL.csproj
+		SccProjectName1 = BiblioMetierDLL
+		SccLocalPath1 = BiblioMetierDLL
+		SccProjectUniqueName2 = ProjetMutuelle\\ProjetMutuelle.csproj
+		SccProjectName2 = ProjetMutuelle
+		SccLocalPath2 = ProjetMutuelle
+	EndGlobalSection
+EndGlobal

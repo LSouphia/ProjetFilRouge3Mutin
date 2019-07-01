@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ProjetMutuelle.Models.Contact>
+
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDEntreprise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrenomContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FonctionContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelContact)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDEntreprise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrenomContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FonctionContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelContact)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDContact }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

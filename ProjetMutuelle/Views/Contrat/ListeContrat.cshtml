@@ -1,0 +1,100 @@
+﻿@model IEnumerable<BiblioMetierDLL.Contrat>
+
+@{
+    ViewBag.Title = "ListeContrat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListeContrat</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.EntrepriseMere.IDApe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Statut.LibelleStatut)
+        </th>*@
+        @*<th>
+            @Html.DisplayNameFor(model => model.IDOrganisme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDUtilisateur)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.IDFiliale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCatSocioPro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeContrat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectifCatSocio)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.AgeMoyenCatSocio)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.DateSignContrat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateEffetContrat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateFinContrat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.EntrepriseMere.IDApe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Statut.LibelleStatut)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.IDOrganisme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDUtilisateur)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.IDFiliale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCatSocioPro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeContrat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectifCatSocio)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.AgeMoyenCatSocio)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.DateSignContrat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEffetContrat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateFinContrat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDContrat }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDContrat }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDContrat })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,67 @@
+﻿@model ProjetMutuelle.Models.Contact
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contact</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDEntreprise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDEntreprise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrenomContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrenomContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FonctionContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FonctionContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelContact)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDContact }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

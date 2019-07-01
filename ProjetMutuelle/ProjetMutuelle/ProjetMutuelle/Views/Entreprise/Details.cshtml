@@ -1,0 +1,101 @@
+﻿@model ProjetMutuelle.Models.Entreprise
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Fiche entreprise</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <div class="thumbnail Blocs ">
+            <legend>Identification</legend>
+            <dt>
+                @Html.DisplayNameFor(model => model.IDEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IDEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IDApe)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IDApe)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DesignationEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DesignationEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AdresseEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AdresseEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CodePostalEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CodePostalEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.VilleEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.VilleEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TelEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TelEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EffectifTotal)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EffectifTotal)
+            </dd>
+        </div>
+        <div class="thumbnail Blocs">
+            <legend>Contact</legend>
+            <dt>
+                @Html.DisplayNameFor(model => model.IDContact)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IDContact)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NomContact)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NomContact)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.PrenomContact)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PrenomContact)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.FonctionContact)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FonctionContact)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TelContact)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TelContact)
+            </dd>
+        </div>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { @*id = Model.CEntreprise*@}) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>

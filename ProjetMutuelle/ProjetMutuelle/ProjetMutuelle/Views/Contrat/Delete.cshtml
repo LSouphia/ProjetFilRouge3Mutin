@@ -1,0 +1,127 @@
+﻿@model ProjetMutuelle.Models.Contrat
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Supprimer un contrat</h3>
+
+<div class="thumbnail Blocs">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDContrat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDContrat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDOrganisme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDOrganisme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDUtilisateur)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDUtilisateur)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDEntreprise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDEntreprise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCatSocioPro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDCatSocioPro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDStatut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDStatut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeContrat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeContrat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EffectifCatSocio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EffectifCatSocio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeMoyenCatSocio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeMoyenCatSocio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateSignContrat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateSignContrat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateEffetContrat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateEffetContrat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateFinContrat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateFinContrat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDFiliale)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDFiliale)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Supprimer" class="btn btn-success" /> |
+            <b>@Html.ActionLink("Retour à la liste", "Index")</b>
+        </div>
+    }
+</div>

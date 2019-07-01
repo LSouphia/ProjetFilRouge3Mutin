@@ -1,0 +1,118 @@
+﻿@model ProjetMutuelle.Models.Contrat
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="thumbnail Blocs" >
+    <dl class="dl-horizontal" style="border:unset">
+        <legend>Fiche Contrat</legend>
+            <dt>
+                @Html.DisplayNameFor(model => model.IDContrat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDContrat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IDOrganisme)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDOrganisme)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IDUtilisateur)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDUtilisateur)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IDEntreprise)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDEntreprise)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IDCatSocioPro)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDCatSocioPro)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IDStatut)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDStatut)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeContrat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TypeContrat)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EffectifCatSocio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EffectifCatSocio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AgeMoyenCatSocio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AgeMoyenCatSocio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateSignContrat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateSignContrat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateEffetContrat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateEffetContrat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateFinContrat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateFinContrat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IDFiliale)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IDFiliale)
+            </dd>
+    </dl>
+    <b>
+        @Html.ActionLink("Modifier", "Edit", new { id = Model.IDContrat }) |
+        @Html.ActionLink("Retour à la liste", "Index")
+    </b>
+</div>

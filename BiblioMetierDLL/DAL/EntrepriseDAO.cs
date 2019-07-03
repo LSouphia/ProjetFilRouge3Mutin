@@ -96,12 +96,71 @@ namespace ProjetMutuelle.DAL
             //Requête linq création des entreprises  
             try
             {
-                using (ModelEf context = new ModelEf())
+                using (ModelEf contexte = new ModelEf())
                 {
-                    context.Configuration.LazyLoadingEnabled = false;
-                    context.Configuration.ProxyCreationEnabled = false;
-                    context.EntrepriseMeres.Add(entreprise);
-                    context.SaveChanges();
+                    contexte.Configuration.LazyLoadingEnabled = false;
+                    contexte.Configuration.ProxyCreationEnabled = false;
+                    contexte.EntrepriseMeres.Add(entreprise);
+                    contexte.SaveChanges();
+                    return true;
+                }
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Modifier(EntrepriseMere entreprise)
+        {
+            //Modification avec Entity framework
+            //Requête linq modification des entreprises
+            using (ModelEf contexte = new ModelEf())
+            {
+                try
+                {
+                    contexte.Configuration.ProxyCreationEnabled = false;
+                    contexte.Configuration.LazyLoadingEnabled = false;
+
+                    EntrepriseMere entrepriseCopie;
+
+                    entrepriseCopie = contexte.EntrepriseMeres.Find(entreprise.IDEntreprise);
+                    entrepriseCopie.IDEntreprise = entreprise.IDEntreprise;
+                    entrepriseCopie.IDApe = entreprise.IDApe;
+                    entrepriseCopie.DesignationEntreprise = entreprise.DesignationEntreprise;
+                    entrepriseCopie.AdresseEntreprise = entreprise.AdresseEntreprise;
+                    entrepriseCopie.CodePostalEntreprise = entreprise.CodePostalEntreprise;
+                    entrepriseCopie.VilleEntreprise = entreprise.VilleEntreprise;
+                    entrepriseCopie.TelEntreprise = entreprise.TelEntreprise;
+                    entrepriseCopie.EffectifTotal = entreprise.EffectifTotal;
+
+                    contexte.SaveChanges();
+                    return true;
+                }
+                catch (System.Exception)
+                {
+                    return false;
+                }
+
+            }
+        }
+
+        public bool Supprimer(string id)
+        {
+            //Suppression avec Entity framework
+            //Requête linq suppression des entreprises
+
+            try
+            {
+                using (ModelEf contexte = new ModelEf())
+                {
+                    contexte.Configuration.LazyLoadingEnabled = false;
+                    contexte.Configuration.ProxyCreationEnabled = false;
+
+                    EntrepriseMere entreprise;
+                    entreprise = contexte.EntrepriseMeres.Find(id);
+                    contexte.EntrepriseMeres.Remove(entreprise);
+                    contexte.SaveChanges();
                     return true;
                 }
             }

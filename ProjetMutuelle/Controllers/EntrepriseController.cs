@@ -72,43 +72,50 @@ namespace ProjetMutuelle.Controllers
         }
 
         // GET: Entreprise/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
-            return View(id);
+            entreprise = dao.Fiche(id);
+            return View(entreprise); 
         }
 
         // POST: Entreprise/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(EntrepriseMere entreprise)
         {
             try
             {
+                if (ModelState.IsValid)
+                {
+                    dao.Modifier(entreprise);
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "veuillez revoir votre saisie et coriger les champs indiqué en rouge");
+                    return View();
+                }
+            }
+            catch
+            {
                 return View();
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
         }
 
         // GET: Entreprise/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(string id)
         {
-            return View();
+            return View(dao.Fiche(id));
         }
 
         // POST: Entreprise/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(string id, EntrepriseMere entreprise)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                dao.Supprimer(id);
                 return RedirectToAction("Index");
+
             }
             catch
             {

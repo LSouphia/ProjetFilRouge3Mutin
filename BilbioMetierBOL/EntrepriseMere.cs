@@ -18,6 +18,7 @@ namespace BiblioMetierDLL
 
         [Key]
         [StringLength(254)]
+        [Display(Name = "ID de l'entreprise")]
         public string IDEntreprise { get; set; }
 
         [StringLength(254)]

@@ -18,7 +18,7 @@ namespace ProjetMutuelle.Controllers
             return View();
         }
 
-        [HttpPost]
+        //[HttpPost]
         public JsonResult GetResult(string search)
         {
             ModelEf mStatut = new ModelEf();

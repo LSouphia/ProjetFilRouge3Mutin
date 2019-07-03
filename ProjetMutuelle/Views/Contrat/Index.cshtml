@@ -21,11 +21,11 @@
                 <div>
                     <label>Statut du Contrat</label>
                     <input type="text" class="form-control" list="autocomplete" id="Statut" />
-                    @*<datalist id="autocomplete">
+                    <datalist id="autocomplete">
                              <option value="Ac" />
                              <option value="Si" />
                              <option value="Pa">
-                        </datalist>*@
+                        </datalist>
                     <a href="~/Views/Entreprise/Index/Liste.cshtml"><input type="submit" value="Chercher" class="btn float-right btn-success" /></a>
                 </div>
             </div>
@@ -33,7 +33,7 @@
     </div>
 </fieldset>
 <p></p>
-@*<script>
+<script>
     $("#chrecherID").autocomplete({
         source: function (request, response) {
             $.ajax({
@@ -51,7 +51,7 @@
             });
         }
     });
-</script>*@
+</script>
 
 
 @*@Html.Action("ListeContrat")*@

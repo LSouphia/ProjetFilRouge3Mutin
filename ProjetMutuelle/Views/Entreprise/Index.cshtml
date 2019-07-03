@@ -62,12 +62,9 @@
         </div>
     </fieldset>*@
 <p></p>
-
-
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
+<script type="text/javascript">
     $(document).ready(function () {
         $("#SearchBtn").click(function () {
             var SearchBy = $("#SearchBy").val();
@@ -76,7 +73,7 @@
             SetData.html("");
             $.ajax({
                 type: "post",
-                url: "/Home/GetSearchingData?SearchBy=" + SearchBy + "&SearchValue=" + SearchValue,
+                url: "/Entreprise/Index/GetSearchingData?SearchBy=" + SearchBy + "&SearchValue=" + SearchValue,
                 contentType: "html",
                 success: function (result) {
                     if (result.length == 0) {
@@ -97,8 +94,5 @@
             });
         });
     });
-
-
-
 </script>
 @*@Html.Action("Liste")*@

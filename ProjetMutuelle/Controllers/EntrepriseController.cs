@@ -27,7 +27,7 @@ namespace ProjetMutuelle.Controllers
             {
                 try
                 {
-                    string Id = SearchValue;
+                    string Id = SearchValue.ToString();
                     entreprises = mStatut.EntrepriseMeres.Where(x => x.IDEntreprise == Id || SearchValue == null).ToList();
                 }
                 catch (FormatException)

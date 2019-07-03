@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using BiblioMetierDLL;
+using System.Linq;
 using ProjetMutuelle;
 using ProjetMutuelle.DAL;
 
@@ -11,29 +12,51 @@ namespace ProjetMutuelle.Controllers
     {
         EntrepriseDAO dao = new EntrepriseDAO();
         EntrepriseMere entreprise = new EntrepriseMere();
-       
 
+        ModelEf mStatut = new ModelEf();
 
         // GET: Entreprise
         public ActionResult Index()
         {
-
-            return View();
-
+            return View(mStatut.EntrepriseMeres.ToList());
         }
-        public ActionResult Liste()
+        public JsonResult GetSearchingData(string SearchBy, string SearchValue)
         {
-            try
+            List<EntrepriseMere> entreprises = new List<EntrepriseMere>();
+            if (SearchBy == "ID")
             {
-                List<EntrepriseMere> entreprises = dao.Liste();
-                return View(entreprises);
+                try
+                {
+                    string Id = SearchValue;
+                    entreprises = mStatut.EntrepriseMeres.Where(x => x.IDEntreprise == Id || SearchValue == null).ToList();
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("{0} Is Not A ID ", SearchValue);
+                }
+                return Json(entreprises, JsonRequestBehavior.AllowGet);
             }
-            catch (Exception err)
+            else
             {
-                ViewBag.Message = err.Message;
-                return View();
+                entreprises = mStatut.EntrepriseMeres.Where(x => x.DesignationEntreprise.StartsWith(SearchValue) || SearchValue == null).ToList();
+                return Json(entreprises, JsonRequestBehavior.AllowGet);
             }
         }
+
+
+        //public ActionResult Liste()
+        //{
+        //    try
+        //    {
+        //        List<EntrepriseMere> entreprises = dao.Liste();
+        //        return View(entreprises);
+        //    }
+        //    catch (Exception err)
+        //    {
+        //        ViewBag.Message = err.Message;
+        //        return View();
+        //    }
+        //}
 
         // GET: Entreprise/Details/5
         public ActionResult Details(string id)
@@ -75,7 +98,7 @@ namespace ProjetMutuelle.Controllers
         public ActionResult Edit(string id)
         {
             entreprise = dao.Fiche(id);
-            return View(entreprise); 
+            return View(entreprise);
         }
 
         // POST: Entreprise/Edit/5
@@ -124,3 +147,4 @@ namespace ProjetMutuelle.Controllers
         }
     }
 }
+

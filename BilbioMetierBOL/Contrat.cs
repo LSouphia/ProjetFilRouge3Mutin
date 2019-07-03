@@ -60,6 +60,6 @@ namespace BiblioMetierDLL
         public virtual EntrepriseMere EntrepriseMere { get; set; }
 
         public virtual Statut Statut { get; set; }
-        public string LibelleStatut { get; set; }
+        //public string LibelleStatut { get; set; }
     }
 }

@@ -12,16 +12,17 @@ namespace ProjetMutuelle.Controllers
         ContratDAO dao = new ContratDAO();
         StatutDAO daostatut = new StatutDAO();
         Contrat contrat = new Contrat();
+        ModelEf mStatut = new ModelEf();
+
 
         public ActionResult Index()
         {
-            return View();
+            return View(mStatut.Contrats.ToList());
         }
 
         //[HttpPost]
         public JsonResult GetResult(string search)
         {
-            ModelEf mStatut = new ModelEf();
         
                 List<Contrat> allsearch = mStatut.Contrats.Where(x => x.IDEntreprise.Contains(search)).Select(x => new Contrat {
                     IDStatut = x.IDStatut,
@@ -30,7 +31,6 @@ namespace ProjetMutuelle.Controllers
             
             return new JsonResult { Data = allsearch, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
-
 
         public ActionResult ListeContrat()
         {

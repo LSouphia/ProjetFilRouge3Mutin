@@ -2,55 +2,81 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h3>Chercher un contrat</h3>
+<select id="SearchBy">
+    <option value="Name">Recherche par Souscripteur</option>
+    <option value="ID">Statut du Contrat</option>
+</select><br /><br />
+@Html.TextBox("Search")<input type="submit" id="SearchBtn" value="Recherche" /><br /><br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id de contrat</th>
+            <th>Souscripteur</th>
+            <th>Filiale</th>
+            <th>Type de contrat</th>
+            <th>Effectif</th>
+            <th>Date signature contrat</th>
+            <th>Date Effet Contrat</th>
+            <th>Date Fin Contrat</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>@item.IDContrat</td>
+            <td>@item.IDEntreprise</td>
+            <td>@item.IDFiliale</td>
+            <td>@item.TypeContrat</td>
+            <td>@item.EffectifCatSocio</td>
+            <td>@item.DateSignContrat</td>
+            <td>@item.DateEffetContrat</td>
+            <td>@item.DateFinContrat</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDContrat }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDContrat }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IDContrat })
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+@*<fieldset>
+        <legend></legend>
+        <div class="container">
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label class="">Recherche par Souscripteur </label>
+                        <input type="text" class="form-control" placeholder="" id="chrecherID" />
+                        <a href="~/Views/Entreprise/Index/Liste.cshtml"><input type="submit" value="Chercher" class="btn float-right btn-success" /></a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label>Statut du Contrat</label>
+                        <input type="text" class="form-control" list="autocomplete" id="Statut" />
+                        <datalist id="autocomplete">
+                            <option value="Ac" />
+                            <option value="Si" />
+                            <option value="Pa">
+                        </datalist>
+                        <a href="~/Views/Entreprise/Index/Liste.cshtml"><input type="submit" value="Chercher" class="btn float-right btn-success" /></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </fieldset>*@
+<p></p>
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<h3>Chercher un contrat</h3>
-<fieldset>
-    <legend></legend>
-    <div class="container">
-        <form class="form-inline">
-            <div class="form-group">
-                <div class="col-md-12">
-                    <label class="">Recherche par Souscripteur </label>
-                    <input type="text" class="form-control" placeholder="" id="chrecherID" />
-                    <a href="~/Views/Entreprise/Index/Liste.cshtml"><input type="submit" value="Chercher" class="btn float-right btn-success" /></a>
-                </div>
-            </div>
-            <div class="form-group">
-                <div>
-                    <label>Statut du Contrat</label>
-                    <input type="text" class="form-control" list="autocomplete" id="Statut" />
-                    <datalist id="autocomplete">
-                             <option value="Ac" />
-                             <option value="Si" />
-                             <option value="Pa">
-                        </datalist>
-                    <a href="~/Views/Entreprise/Index/Liste.cshtml"><input type="submit" value="Chercher" class="btn float-right btn-success" /></a>
-                </div>
-            </div>
-        </form>
-    </div>
-</fieldset>
-<p></p>
 <script>
-    $("#chrecherID").autocomplete({
-        source: function (request, response) {
-            $.ajax({
-                url: '@Url.Action("GetResult", "Contrat")',
-                dataType: "json",
-                data: { search: $("#chrecherID").val() },
-                success: function (data) {
-                    response($.map(data, function (item) {
-                        return { label: item.IDEntreprise, value: item.IDEntreprise };
-                    }));
-                },
-                error: function (xhr, status, error) {
-                    alert("Error");
-                }
-            });
-        }
-    });
+
 </script>
 
 

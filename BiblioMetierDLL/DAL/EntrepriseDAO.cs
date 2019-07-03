@@ -1,4 +1,4 @@
-﻿using BiblioMetierDLL.BLL;
+﻿using BiblioMetierDLL;
 using ProjetMutuelle.Models;
 using System;
 using System.Collections.Generic;

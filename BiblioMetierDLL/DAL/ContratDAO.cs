@@ -13,6 +13,7 @@ namespace ProjetMutuelle.DAL
 {
     public class ContratDAO
     {
+        static ContratDAO _instance;
         SqlConnection _cn = new SqlConnection();
         SqlCommand cd = new SqlCommand();
 
@@ -23,6 +24,19 @@ namespace ProjetMutuelle.DAL
         {
             ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["ModelEf"];
             _cn.ConnectionString = oConfig.ConnectionString;
+        }
+
+        /// <summary>
+        /// Singleton
+        /// </summary>
+        public static ContratDAO Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new ContratDAO();
+                return _instance;
+            }
         }
 
         /// <summary>

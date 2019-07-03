@@ -45,7 +45,7 @@ namespace ProjetMutuelle.BLL
         }
 
         /// <summary>
-        /// Création
+        /// Créer
         /// </summary>
         /// <param name="entreprise"></param>
         public bool Creer(EntrepriseMere entreprise)

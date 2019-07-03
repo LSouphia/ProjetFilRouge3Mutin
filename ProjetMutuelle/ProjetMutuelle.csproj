@@ -200,10 +200,10 @@
     <Content Include="Views\Entreprise\Liste.cshtml" />
     <Content Include="Views\Entreprise\Index.cshtml" />
     <Content Include="Views\Entreprise\Details.cshtml" />
-    <Content Include="Views\Entreprise\Create.cshtml" />
     <Content Include="Views\Entreprise\Edit.cshtml" />
     <Content Include="Views\Entreprise\Delete.cshtml" />
     <Content Include="Views\Contrat\ListeContrat.cshtml" />
+    <Content Include="Views\Entreprise\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -228,9 +228,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BiblioMetierDLL\BiblioMetierDLL.csproj">
+    <ProjectReference Include="..\BiblioMetierDLL\BiblioMetierDAL.csproj">
       <Project>{b7f3bd4d-4fc9-4897-8ac5-7596e44e4b9d}</Project>
-      <Name>BiblioMetierDLL</Name>
+      <Name>BiblioMetierDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BilbioMetierBOL\BilbioMetierBOL.csproj">
+      <Project>{012C664F-1393-431C-901C-57769E160017}</Project>
+      <Name>BilbioMetierBOL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using BiblioMetierDLL;
 using ProjetMutuelle;
 using ProjetMutuelle.DAL;
-using ProjetMutuelle.Models;
 
 namespace ProjetMutuelle.Controllers
 {
     public class EntrepriseController : Controller
     {
         EntrepriseDAO dao = new EntrepriseDAO();
-        Entreprise entreprise = new Entreprise();
+        EntrepriseMere entreprise = new EntrepriseMere();
+       
 
 
         // GET: Entreprise
@@ -24,7 +25,7 @@ namespace ProjetMutuelle.Controllers
         {
             try
             {
-                List<Entreprise> entreprises = dao.Liste();
+                List<EntrepriseMere> entreprises = dao.Liste();
                 return View(entreprises);
             }
             catch (Exception err)
@@ -57,36 +58,16 @@ namespace ProjetMutuelle.Controllers
 
         // POST: Entreprise/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(EntrepriseMere entreprise)
         {
-            int n = 0;
-
             try
             {
-                if (ModelState.IsValid)
-                {
-                    if (n == 0)
-                    {
-                        dao.Creer(entreprise);
-                        return RedirectToAction("Liste");
-                    }
-                    else
-                    {
-                        ModelState.AddModelError("", "Impossible de créer la ligne");
-                        return View();
-                    }
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Il manque des éléments");
-                    return View();
-                }
+                dao.Creer(entreprise);
+                return RedirectToAction("Index");
             }
-            catch (Exception err)
-
+            catch
             {
-                ViewBag.Message = err.Message;
-                return View("~/Views/Shared/Error.cshtml");
+                return View();
             }
         }
 

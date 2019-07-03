@@ -49,20 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ContratManager.cs" />
     <Compile Include="BLL\EntrepriseManager.cs" />
-    <Compile Include="ContactEntreprise.cs" />
-    <Compile Include="Models\Contrat.cs" />
     <Compile Include="DAL\ContactDAO.cs" />
     <Compile Include="DAL\ContratDAO.cs" />
     <Compile Include="DAL\EntrepriseDAO.cs" />
     <Compile Include="DAL\StatutDAO.cs" />
-    <Compile Include="EntrepriseMere.cs" />
-    <Compile Include="ModelEf.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Entreprise.cs" />
     <Compile Include="Models\Statut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Statut.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework">
@@ -74,6 +70,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BilbioMetierBOL\BilbioMetierBOL.csproj">
+      <Project>{012c664f-1393-431c-901c-57769e160017}</Project>
+      <Name>BilbioMetierBOL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

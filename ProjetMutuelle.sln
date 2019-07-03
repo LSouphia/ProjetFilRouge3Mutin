@@ -5,7 +5,19 @@ VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetMutuelle", "ProjetMutuelle\ProjetMutuelle.csproj", "{4B6682B9-F929-4781-8755-5D1A9DD213D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblioMetierDLL", "BiblioMetierDLL\BiblioMetierDLL.csproj", "{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblioMetierDAL", "BiblioMetierDLL\BiblioMetierDAL.csproj", "{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{E62575FD-8068-42B9-8851-AAAE732062E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serveur", "Serveur", "{6DBADE85-6B9F-4E5C-97B1-E793A3B5E212}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL BOL", "DLL BOL", "{5C4B7537-7D65-4686-9652-ADDA4559D16E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL DAL", "DLL DAL", "{313693C1-44B1-49C3-937F-61BACDE2901F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{76F909C1-BA59-4A12-A15A-F10D1F5FFF10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BilbioMetierBOL", "BilbioMetierBOL\BilbioMetierBOL.csproj", "{012C664F-1393-431C-901C-57769E160017}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,23 +33,23 @@ Global
 		{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{012C664F-1393-431C-901C-57769E160017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{012C664F-1393-431C-901C-57769E160017}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{012C664F-1393-431C-901C-57769E160017}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{012C664F-1393-431C-901C-57769E160017}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4B6682B9-F929-4781-8755-5D1A9DD213D1} = {E62575FD-8068-42B9-8851-AAAE732062E2}
+		{B7F3BD4D-4FC9-4897-8AC5-7596E44E4B9D} = {313693C1-44B1-49C3-937F-61BACDE2901F}
+		{5C4B7537-7D65-4686-9652-ADDA4559D16E} = {6DBADE85-6B9F-4E5C-97B1-E793A3B5E212}
+		{313693C1-44B1-49C3-937F-61BACDE2901F} = {6DBADE85-6B9F-4E5C-97B1-E793A3B5E212}
+		{76F909C1-BA59-4A12-A15A-F10D1F5FFF10} = {6DBADE85-6B9F-4E5C-97B1-E793A3B5E212}
+		{012C664F-1393-431C-901C-57769E160017} = {5C4B7537-7D65-4686-9652-ADDA4559D16E}
+	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {15482883-AB1D-4A06-9EDD-04C80A81A503}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dev.azure.com/heesesophia
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = BiblioMetierDLL\\BiblioMetierDLL.csproj
-		SccProjectName1 = BiblioMetierDLL
-		SccLocalPath1 = BiblioMetierDLL
-		SccProjectUniqueName2 = ProjetMutuelle\\ProjetMutuelle.csproj
-		SccProjectName2 = ProjetMutuelle
-		SccLocalPath2 = ProjetMutuelle
 	EndGlobalSection
 EndGlobal

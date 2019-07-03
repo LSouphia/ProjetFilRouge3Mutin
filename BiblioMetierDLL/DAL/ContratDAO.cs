@@ -1,4 +1,4 @@
-﻿using BiblioMetierDLL;
+﻿using BiblioMetierDLL.BLL;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

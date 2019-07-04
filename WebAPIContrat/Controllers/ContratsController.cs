@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using BiblioMetierBOL;
+using BiblioMetierBOL.Models;
 
 namespace WebAPIContrat.Controllers
 {
     public class ContratsController : ApiController
     {
-        private ModelEf db = new ModelEf();
+        private ModelEf1 db = new ModelEf1();
 
         // GET: api/Contrats
         public IQueryable<Contrat> GetContrats()

@@ -1,5 +1,5 @@
 ﻿using BiblioMetierBOL;
-using ProjetMutuelle.Models;
+using BiblioMetierBOL.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -22,7 +22,7 @@ namespace BiblioMetierDAL.DAL
         /// </summary>
         public EntrepriseDAO()
         {
-            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["ModelEf"];
+            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["ModelEf1"];
             _cn.ConnectionString = oConfig.ConnectionString;
         }
 
@@ -48,7 +48,7 @@ namespace BiblioMetierDAL.DAL
             //Liste avec Entity Framework
             //Requête Linq de la liste des entreprises
 
-            using (var contexte = new ModelEf())
+            using (var contexte = new ModelEf1())
             {
                 contexte.Configuration.ProxyCreationEnabled = false;
                 contexte.Configuration.LazyLoadingEnabled = false;
@@ -68,7 +68,7 @@ namespace BiblioMetierDAL.DAL
         /// <returns>entreprise</returns>
         public EntrepriseMere Fiche(string sCode)
         {
-            using (var contexte = new ModelEf())
+            using (var contexte = new ModelEf1())
             {
                 contexte.Configuration.ProxyCreationEnabled = false;
                 contexte.Configuration.LazyLoadingEnabled = false;
@@ -96,7 +96,7 @@ namespace BiblioMetierDAL.DAL
             //Requête linq création des entreprises  
             try
             {
-                using (ModelEf contexte = new ModelEf())
+                using (ModelEf1 contexte = new ModelEf1())
                 {
                     contexte.Configuration.LazyLoadingEnabled = false;
                     contexte.Configuration.ProxyCreationEnabled = false;
@@ -115,7 +115,7 @@ namespace BiblioMetierDAL.DAL
         {
             //Modification avec Entity framework
             //Requête linq modification des entreprises
-            using (ModelEf contexte = new ModelEf())
+            using (ModelEf1 contexte = new ModelEf1())
             {
                 try
                 {
@@ -152,7 +152,7 @@ namespace BiblioMetierDAL.DAL
 
             try
             {
-                using (ModelEf contexte = new ModelEf())
+                using (ModelEf1 contexte = new ModelEf1())
                 {
                     contexte.Configuration.LazyLoadingEnabled = false;
                     contexte.Configuration.ProxyCreationEnabled = false;

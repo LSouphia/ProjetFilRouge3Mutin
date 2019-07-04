@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BiblioMetierBOL;
+using BiblioMetierBOL.Models;
 using BiblioMetierDAL.DAL;
 
 namespace BiblioMetierDAL.BLL

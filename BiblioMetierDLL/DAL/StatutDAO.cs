@@ -1,5 +1,5 @@
 ﻿using BiblioMetierBOL;
-using ProjetMutuelle.Models;
+using BiblioMetierBOL.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,7 +18,7 @@ namespace BiblioMetierDAL.DAL
         /// </summary>
         public StatutDAO()
         {
-            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["ModelEf"];
+            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["ModelEf1"];
             _cn.ConnectionString = oConfig.ConnectionString;
         }
 

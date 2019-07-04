@@ -1,4 +1,5 @@
 ﻿using BiblioMetierBOL;
+using BiblioMetierBOL.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -22,7 +23,7 @@ namespace BiblioMetierDAL.DAL
         /// </summary>
         public ContratDAO()
         {
-            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["ModelEf"];
+            ConnectionStringSettings oConfig = ConfigurationManager.ConnectionStrings["ModelEf1"];
             _cn.ConnectionString = oConfig.ConnectionString;
         }
 
@@ -46,7 +47,7 @@ namespace BiblioMetierDAL.DAL
         public List<Contrat> ListeContrat()
         {
 
-            using (var contexte = new ModelEf())
+            using (var contexte = new ModelEf1())
             {
                 contexte.Configuration.LazyLoadingEnabled = false;
                 contexte.Configuration.ProxyCreationEnabled = false;
@@ -153,7 +154,7 @@ namespace BiblioMetierDAL.DAL
         {
             try
             {
-                using (ModelEf context = new ModelEf())
+                using (ModelEf1 context = new ModelEf1())
                 {
                     context.Configuration.LazyLoadingEnabled = false;
                     context.Configuration.ProxyCreationEnabled = false;
@@ -176,7 +177,7 @@ namespace BiblioMetierDAL.DAL
         {
             try
             {
-                using (ModelEf context = new ModelEf())
+                using (ModelEf1 context = new ModelEf1())
                 {
                     context.Configuration.LazyLoadingEnabled = false;
                     context.Configuration.ProxyCreationEnabled = false;
@@ -214,7 +215,7 @@ namespace BiblioMetierDAL.DAL
         /// <returns>Objet contrat</returns>
         public Contrat Lecture(string code)
         {
-            using (ModelEf context = new ModelEf())
+            using (ModelEf1 context = new ModelEf1())
             {
                 context.Configuration.LazyLoadingEnabled = false;
                 context.Configuration.ProxyCreationEnabled = false;
@@ -231,7 +232,7 @@ namespace BiblioMetierDAL.DAL
         {
             try
             {
-                using (ModelEf context = new ModelEf())
+                using (ModelEf1 context = new ModelEf1())
                 {
                     context.Configuration.LazyLoadingEnabled = false;
                     context.Configuration.ProxyCreationEnabled = false;

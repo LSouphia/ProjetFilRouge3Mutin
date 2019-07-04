@@ -1,0 +1,69 @@
+﻿@model BiblioMetierBOL.Models.EntrepriseMere
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Fiche entreprise</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <div class="thumbnail Blocs ">
+            <legend>Identification</legend>
+            <dt>
+                @Html.DisplayNameFor(model => model.IDEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IDEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IDApe)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IDApe)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DesignationEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DesignationEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.AdresseEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.AdresseEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CodePostalEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CodePostalEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.VilleEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.VilleEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TelEntreprise)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TelEntreprise)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EffectifTotal)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EffectifTotal)
+            </dd>
+        </div>
+    
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { @*id = Model.CEntreprise*@}) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</p>

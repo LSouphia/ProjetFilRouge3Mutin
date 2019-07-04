@@ -1,4 +1,5 @@
 ﻿using BiblioMetierBOL;
+using BiblioMetierBOL.Models;
 using BiblioMetierDAL.DAL;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace ProjetMutuelle.Controllers
         ContratDAO dao = new ContratDAO();
         StatutDAO daostatut = new StatutDAO();
         Contrat contrat = new Contrat();
-        ModelEf mStatut = new ModelEf();
+        ModelEf1 mStatut = new ModelEf1();
 
 
         public ActionResult Index()

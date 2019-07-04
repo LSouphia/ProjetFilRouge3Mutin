@@ -1,0 +1,98 @@
+﻿@model IEnumerable<BiblioMetierBOL.Models.EntrepriseMere>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste des entreprises</h2>
+<select id="SearchBy">
+    <option value="ID">ID Entreprise</option>
+    <option value="Name">Nom de l'entreprise</option>
+</select><br /><br />
+@Html.TextBox("Search")<input type="submit" id="SearchBtn" value="Recherche" /><br /><br />
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id Entreprise</th>
+            <th>Nom Entreprise</th>
+            <th>APE</th>
+        </tr>
+    </thead>
+    <tbody id="DataSearching">
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@item.IDEntreprise</td>
+                <td>@item.DesignationEntreprise</td>
+                <td>@item.IDApe</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IDEntreprise }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IDEntreprise }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IDEntreprise }) |
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+@*<fieldset>
+        <legend></legend>
+        <div class="container">
+            <form class="form-inline">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label class="">Recherche par nom d'entreprise:</label>
+                        <input type="text" class="form-control" placeholder="" />
+                        <a href="~/Views/Entreprise/Index/Liste.cshtml"><input type="submit" value="Chercher" class="btn float-right btn-success" /></a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label>Recherche par code APE:</label>
+                        <input type="text" class="form-control" placeholder="" />
+                        <a href="~/Views/Entreprise/Index/Liste.cshtml"><input type="submit" value="Chercher" class="btn float-right btn-success" /></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </fieldset>*@
+<p></p>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#SearchBtn").click(function () {
+            var SearchBy = $("#SearchBy").val();
+            var SearchValue = $("#Search").val();
+            var SetData = $("#DataSearching");
+            SetData.html("");
+            $.ajax({
+                type: "post",
+                url: "/Entreprise/Index/GetSearchingData?SearchBy=" + SearchBy + "&SearchValue=" + SearchValue,
+                contentType: "html",
+                success: function (result) {
+                    if (result.length == 0) {
+                        SetData.append('<tr style="color:red"><td colspan="3">No Match Data</td></tr>')
+                    }
+                    else {
+                        $.each(result, function (index, value) {
+                            var Data = "<tr>" +
+                                "<td>" + value.IDEntreprise + "</td>" +
+                                "<td>" + value.DesignationEntreprise + "</td>" +
+                                "<td>" + value.IDApe + "</td>" +
+                                "</tr>";
+                            SetData.append(Data);
+
+                        });
+                    }
+                }
+            });
+        });
+    });
+</script>
+@*@Html.Action("Liste")*@

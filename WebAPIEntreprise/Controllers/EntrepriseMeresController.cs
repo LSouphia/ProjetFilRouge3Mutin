@@ -10,12 +10,13 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using BiblioMetierBOL;
+using BiblioMetierBOL.Models;
 
 namespace WebAPIEntreprise.Controllers
 {
     public class EntrepriseMeresController : ApiController
     {
-        private ModelEf db = new ModelEf();
+        private ModelEf1 db = new ModelEf1();
 
         // GET: api/EntrepriseMeres
         public IQueryable<EntrepriseMere> GetEntrepriseMeres()

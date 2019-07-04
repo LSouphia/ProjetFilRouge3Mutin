@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BiblioMetierBOL.Models.EntrepriseMere>
+
+@{
+    ViewBag.Title = "Liste";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Liste</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDEntreprise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationEntreprise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDApe)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDEntreprise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesignationEntreprise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDApe)
+            </td>
+            <td>
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.IDEntreprise }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IDEntreprise }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.IDEntreprise }) |
+            </td>
+        </tr>
+    }
+
+</table>

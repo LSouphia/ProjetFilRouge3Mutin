@@ -1,0 +1,92 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <title>@ViewBag.Title </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!--navbar-->
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">
+                    <img class="logo" src="~/Images/MutinLogo.png">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @*<li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-home"></i>Entreprise
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-home"></i>Contrat
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="glyphicon glyphicon-home"></i>Particulier
+                            </a>
+                        </li>*@
+                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
+                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contrat", "Index", "Contrat")</li>
+                    <li>@Html.ActionLink("Entreprise", "Index", "EntrepriseMere")</li>
+
+                </ul>
+                <!--Partial Login-->
+                @Html.Partial("_Login")
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid Myfooter">
+        @RenderBody()
+        <!--Footer-->
+        <footer class="navbar navbar-fixed-bottom ">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-3 hidden-xs">
+                        <i class="glyphicon glyphicon-folder-open"></i>
+                        <strong>Service Souscription Contrat</strong><br />
+                        Nom et fonction du contact<br />
+                        04 63 69 65 25<br />
+                        <a href="mail to:formationafpa2019@gmail.com &subject=formation">Servicecontrat@MutIn.com</a><p></p><br />
+                    </div>
+                    <div class="col-md-3 hidden-xs">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <strong>Service Cotisation</strong><br />
+                        Nom et fonction du contact<br />
+                        04 63 69 65 30<br />
+                        <a href="mail to:formationafpa2019@gmail.com &subject=formation">Servicecotisation@MutIn.com</a><p></p><br />
+                    </div>
+                    <div class="col-md-3 hidden-xs">
+                        <i class="glyphicon glyphicon-euro"></i>
+                        <strong>Service Indemnités</strong><br />
+                        Nom et fonction du contact<br />
+                        04 63 69 65 35<br />
+                        <a href="mail to:formationafpa2019@gmail.com &subject=formation">Serviceindemnites@MutIn.com</a><p></p><br />
+                    </div>
+                    <a href="#">Mentions Legales</a>
+                    <p>&copy; @DateTime.Now.Year - MUT'in Tous droits réservés</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

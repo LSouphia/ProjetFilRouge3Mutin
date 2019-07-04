@@ -55,7 +55,6 @@
     <Compile Include="DAL\ContratDAO.cs" />
     <Compile Include="DAL\EntrepriseDAO.cs" />
     <Compile Include="DAL\StatutDAO.cs" />
-    <Compile Include="Models\Entreprise.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

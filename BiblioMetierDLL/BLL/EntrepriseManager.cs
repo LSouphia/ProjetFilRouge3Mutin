@@ -5,6 +5,7 @@ using System.Web;
 
 using BiblioMetierDAL.DAL;
 using BiblioMetierBOL;
+using BiblioMetierBOL.Models;
 
 namespace BiblioMetierDAL.BLL
 {

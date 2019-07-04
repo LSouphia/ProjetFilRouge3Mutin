@@ -5,6 +5,7 @@ using System.Linq;
 using ProjetMutuelle;
 using BiblioMetierDAL.DAL;
 using BiblioMetierBOL;
+using BiblioMetierBOL.Models;
 
 namespace ProjetMutuelle.Controllers
 {
@@ -13,7 +14,7 @@ namespace ProjetMutuelle.Controllers
         EntrepriseDAO dao = new EntrepriseDAO();
         EntrepriseMere entreprise = new EntrepriseMere();
 
-        ModelEf mStatut = new ModelEf();
+        ModelEf1 mStatut = new ModelEf1();
 
         // GET: Entreprise
         public ActionResult Index()

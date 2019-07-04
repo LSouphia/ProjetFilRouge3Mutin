@@ -8,7 +8,7 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace ProjetMutuelle.DAL
+//namespace BiblioMetierDAL.DAL
 //{
 //   public class ContactDAO
 //    {

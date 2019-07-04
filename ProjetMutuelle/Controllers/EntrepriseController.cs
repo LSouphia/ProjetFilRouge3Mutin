@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using BiblioMetierDLL;
 using System.Linq;
 using ProjetMutuelle;
-using ProjetMutuelle.DAL;
+using BiblioMetierDAL.DAL;
+using BiblioMetierBOL;
 
 namespace ProjetMutuelle.Controllers
 {

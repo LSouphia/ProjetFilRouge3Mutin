@@ -1,4 +1,4 @@
-namespace BiblioMetierDLL
+namespace BiblioMetierBOL
 {
     using System;
     using System.Data.Entity;

@@ -1,4 +1,4 @@
-﻿using BiblioMetierDLL;
+﻿using BiblioMetierBOL;
 using ProjetMutuelle.Models;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ProjetMutuelle.DAL
+namespace BiblioMetierDAL.DAL
 {
     public class EntrepriseDAO
     {

@@ -1,4 +1,4 @@
-﻿using BiblioMetierDLL;
+﻿using BiblioMetierBOL;
 using ProjetMutuelle.Models;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace ProjetMutuelle.DAL
+namespace BiblioMetierDAL.DAL
 {
     public class StatutDAO
     {

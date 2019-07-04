@@ -1,4 +1,4 @@
-﻿using BiblioMetierDLL;
+﻿using BiblioMetierBOL;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace ProjetMutuelle.DAL
+namespace BiblioMetierDAL.DAL
 {
     public class ContratDAO
     {

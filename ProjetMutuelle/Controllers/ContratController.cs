@@ -1,5 +1,5 @@
-﻿using BiblioMetierDLL;
-using ProjetMutuelle.DAL;
+﻿using BiblioMetierBOL;
+using BiblioMetierDAL.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;

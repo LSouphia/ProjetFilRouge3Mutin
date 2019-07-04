@@ -1,14 +1,12 @@
-﻿using BiblioMetierDLL;
-using ProjetMutuelle.DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-using BiblioMetierDLL;
-using ProjetMutuelle.DAL;
+using BiblioMetierDAL.DAL;
+using BiblioMetierBOL;
 
-namespace ProjetMutuelle.BLL
+namespace BiblioMetierDAL.BLL
 {
     public class EntrepriseManager
     {

@@ -5,6 +5,8 @@ namespace BiblioMetierBOL
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Runtime.Serialization;
+    using System.Xml.Serialization;
 
     [Table("Contrat")]
     public partial class Contrat
@@ -57,9 +59,13 @@ namespace BiblioMetierBOL
         [Display(Name = "Date Fin Contrat")]
         public DateTime? DateFinContrat { get; set; }
 
-        public virtual EntrepriseMere EntrepriseMere { get; set; }
+        [XmlIgnore]
+        [IgnoreDataMember]
+        public  EntrepriseMere EntrepriseMere { get; set; }
 
-        public virtual Statut Statut { get; set; }
+        [XmlIgnore]
+        [IgnoreDataMember]
+        public  Statut Statut { get; set; }
         //public string LibelleStatut { get; set; }
     }
 }

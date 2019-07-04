@@ -12,10 +12,10 @@ namespace BiblioMetierBOL
         {
         }
 
-        public virtual DbSet<ContactEntreprise> ContactEntreprises { get; set; }
-        public virtual DbSet<Contrat> Contrats { get; set; }
-        public virtual DbSet<EntrepriseMere> EntrepriseMeres { get; set; }
-        public virtual DbSet<Statut> Statuts { get; set; }
+        public  DbSet<ContactEntreprise> ContactEntreprises { get; set; }
+        public  DbSet<Contrat> Contrats { get; set; }
+        public  DbSet<EntrepriseMere> EntrepriseMeres { get; set; }
+        public  DbSet<Statut> Statuts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

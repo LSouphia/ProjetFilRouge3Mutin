@@ -44,7 +44,7 @@ namespace ProjetMutuelle.Controllers
             }
         }
 
-
+        // à garder?
         //public ActionResult Liste()
         //{
         //    try

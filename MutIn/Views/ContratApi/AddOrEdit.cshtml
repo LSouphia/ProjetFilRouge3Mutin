@@ -1,0 +1,46 @@
+﻿@model BilbioMetierBOL.Models.ContratApiModel
+@{
+    ViewBag.Title = "AddOrEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="form-body">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.IDContrat)
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDContrat)
+            @Html.EditorFor(model => model.IDContrat)
+            @Html.ValidationMessageFor(model => model.IDContrat)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EffectifCatSocio)
+            @Html.EditorFor(model => model.EffectifCatSocio)
+            @Html.ValidationMessageFor(model => model.EffectifCatSocio)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateSignContrat)
+            @Html.EditorFor(model => model.DateSignContrat)
+            @Html.ValidationMessageFor(model => model.DateSignContrat)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateEffetContrat)
+            @Html.EditorFor(model => model.DateEffetContrat)
+            @Html.ValidationMessageFor(model => model.DateEffetContrat)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateFinContrat)
+            @Html.EditorFor(model => model.DateFinContrat)
+            @Html.ValidationMessageFor(model => model.DateFinContrat)
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Valider" class="btn button" />
+            <input type="reset" value="Annuler" class="btn button" />
+
+        </div>
+    }
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval");
+    }

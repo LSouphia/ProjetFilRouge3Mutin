@@ -104,6 +104,7 @@
     <Compile Include="Models\Condition.cs" />
     <Compile Include="Models\ContactEntreprise.cs" />
     <Compile Include="Models\Contrat.cs" />
+    <Compile Include="Models\ContratApiModel.cs" />
     <Compile Include="Models\Droit.cs" />
     <Compile Include="Models\EntrepriseMere.cs" />
     <Compile Include="Models\Filiale.cs" />

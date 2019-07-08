@@ -1,0 +1,119 @@
+﻿@model IEnumerable<BilbioMetierBOL.Models.ContratApiModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href=" @Url.Action("AddOrEdit","ContratApi")" class="btn btn-default"><i class="fa fa-plus"></i> Créer un Contrat</a>
+</p>
+<table class="table table-striped">
+    <thead class="table-bordered">
+    <th>
+        @Html.DisplayNameFor(model => model.IDContrat)
+    </th>
+    @*<th>
+            @Html.DisplayNameFor(model => model.IDOrganisme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDUtilisateur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDFiliale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDEntreprise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCatSocioPro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDStatut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeContrat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EffectifCatSocio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AgeMoyenCatSocio)
+        </th>*@
+    <th>
+        @Html.DisplayNameFor(model => model.DateSignContrat)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.DateEffetContrat)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.DateFinContrat)
+    </th>
+    <th>Actions</th>
+    </tr>
+    </thead>
+    <tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDContrat)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.IDOrganisme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDUtilisateur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDFiliale)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDEntreprise)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCatSocioPro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDStatut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeContrat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectifCatSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgeMoyenCatSocio)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.EffectifCatSocio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateSignContrat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateEffetContrat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateFinContrat)
+        </td>
+        <td>
+            <a href="@Url.Action("AddOrEdit", "ContratApi", new { id = item.IDContrat })" class="btn btn-default"><i class="fa fa-pencil"></i> Modifier</a>
+            @Html.ActionLink("Delete", "Delete", new { id = item.IDContrat })
+        </td>
+    </tr>
+    }
+
+    </table>
+    @section scripts{
+        <script>
+        $(function () {
+            var successMessage = '@TempData["SuccessMessage"]'
+            if (successMessage != '')
+                alertify.success(successMessage);
+        });
+        </script>
+    }
